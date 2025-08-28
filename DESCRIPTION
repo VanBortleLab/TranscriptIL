@@ -9,7 +9,7 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: Extends intron retention levels of individual introns by computing replicate-aware summaries, log2FC-to-z normalization, nested-intron clustering, and gene-level permutation-based IR distribution scores across conditions.
+Description: Calculate transcript-centric intron retention levels by computing replicate-aware summaries, log2FC-to-z normalization, nested-intron clustering, and gene-level permutation-based IR distribution scores across conditions.
 License: MIT + file LICENSE
 Depends: R (>= 4.2.0)
 Imports: 
