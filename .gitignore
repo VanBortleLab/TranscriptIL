@@ -1,0 +1,18 @@
+# RStudio files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# R build/check outputs
+*.Rproj
+.Rcheck/
+*.tar.gz
+*.Rhistory
+
+# OS files
+.DS_Store
+
+# Custom
+sources/
+

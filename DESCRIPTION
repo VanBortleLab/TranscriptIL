@@ -1,0 +1,24 @@
+Package: TranscriptIL
+Type: Package
+Title: Nested-Intron-aware and Transcript-level analytics for intron retention levels
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Sihang", "Zhou",
+      email = "sihangz2@illinois.edu",
+      role = c("aut", "cre")
+    )
+  )
+Description: Extends intron retention levels of individual introns by computing replicate-aware summaries, log2FC-to-z normalization, nested-intron clustering, and gene-level permutation-based IR distribution scores across conditions.
+License: MIT + file LICENSE
+Depends: R (>= 4.2.0)
+Imports: 
+    data.table,
+    utils,
+    stats
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
