@@ -1,5 +1,9 @@
 
- # <img src="logo_header.png" width="800px">
+<p align="center">
+  <img width="752" height="358" alt="Screenshot 2025-08-29 at 11 49 05 AM"
+       src="https://github.com/user-attachments/assets/d94f2ace-ab4a-4d5c-91e0-dab35c45ce0b" />
+</p>
+
 
 # Overview
 **TranscriptIL** provides transcript-level analysis of intron retention (IR) with replicate-aware summaries, nested intron clustering, and per-gene permutation testing to quantify transcript-level IR changes with associated p-values. The framework also supports intron-level comparisons between control and treatment conditions.
