@@ -99,6 +99,18 @@ These functions support reading `IRratio` values from `IRFinder` outputs and is 
 - Returns: Dataframe with new `{group}_{metric}_avg` columns. <br>
 
 
+-- `compute_lfc_z()`
+- Description: Calculates the log2 fold change of experimental IRratio over control and transforms it into a standardized Z-score. Useful for quantifying relative intron retention differences between conditions while accounting for variability.
+- Parameters: <br>
+`df`: Dataframe (typically output of `compute_group_means()`). <br>
+`control_name`: Name of control group (used in column prefix). <br>
+`experiment_name`: Name of experiment group (used in column prefix). <br>
+`new_name`: Name of columns to store fold change and z score. <br>
+`metric`: Column to average (default = "IRratio"). The function expects columns named `{sample_name}_{metric}_avg`. <br>
+`pseudocount`: Small numeric added to numerator and denominator to avoid log of zero (default = 1e-6).
+- Returns: Dataframe with two new columns, `{new_name}_{metric}_lfc`, `{new_name}_{metric}_z` <br>
+
+
 
 
 
