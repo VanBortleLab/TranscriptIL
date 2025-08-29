@@ -56,7 +56,7 @@ print(res)
 `df`: Dataframe with `gene`, `Start`, and `End`.
 - Returns: Original dataframe with new `Nested` and `Intron_cluster` columns.
 
--- `irtranscript(df, score, save_dir, nperms = 100000,, seed = Null)`
+-- `irtranscript(df, score, save_dir, nperms = 100000,seed = Null)`
 - Description: Transcript-level analysis via permutation test; treat nested introns as a cluster to perform the permutation.
 - Parameters:<br>
 `df`: Dataframe (must include Nested and Intron_cluster). <br>
