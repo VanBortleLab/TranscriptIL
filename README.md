@@ -17,3 +17,35 @@
 ```r
 #Install TranscriptIL from GitHub
 remotes::install_github("VanBortleLab/TranscriptIL")
+```
+
+# Example
+```r
+##Core Workflow Example
+
+# Demo input dataframe
+df <- data.frame(
+  gene  = c("G1","G1","G2"),
+  Start = c(100,150,200),
+  End   = c(200,180,300),
+  index = c("chr1_100_200_G1/ENSG1",
+            "chr1_150_180_G1/ENSG1",
+            "chr1_200_300_G2/ENSG2"),
+  Condition1_IRratio = c(0.3, 0.2, 0.5),
+  Condition2_IRratio = c(0.4, 0.3, 0.6)
+)
+
+# Step 1: Classify introns (Parent / Nested / Orphan)
+df_nested <- nested_intron(df)
+
+# Step 2: Run transcript-level permutation test
+tmpdir <- tempdir()
+res <- irtranscript(df_nested, 
+                    score    = c("Condition1_IRratio","Condition2_IRratio"), 
+                    save_dir = tempdir(),
+                    nperms   = 1000)
+
+# View result
+print(res)
+```
+
