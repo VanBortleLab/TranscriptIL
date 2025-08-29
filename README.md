@@ -42,7 +42,7 @@ df_nested <- nested_intron(df)
 tmpdir <- tempdir()
 res <- irtranscript(df_nested, 
                     score    = c("Condition1_IRratio","Condition2_IRratio"), 
-                    save_dir = tempdir(),
+                    save_dir = tempdir,
                     nperms   = 1000)
 
 # View result
