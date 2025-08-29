@@ -48,4 +48,33 @@ res <- irtranscript(df_nested,
 # View result
 print(res)
 ```
+# Functions Overview
+## core functions
+-- `nested_intron(df)`
+- Description: Classifies introns as Parent, Nested, or Orphan based on coordinates; assigns intron clusters.
+- Parameters:
+`df`: Dataframe with `gene`, `Start`, and `End`.
+- Returns: Original dataframe with new `Nested` and `Intron_cluster` columns.
+
+-- `irtranscript(df, score, save_dir, nperms = 100000,, seed = Null)`
+- Description: Transcript-level analysis via permutation test; treat nested introns as a cluster to perform the permutation.
+- Parameters:<br>
+`df`: Dataframe (must include Nested and Intron_cluster). <br>
+`score`: Column(s) contains IR ratios to test. <br>
+`save_dir`: Directory where results are written. <br>
+`nperms`: Number of permutations (default = 100000). <br>
+`seed`: Random seed (optional, for reproducibility).<br>
+- Returns: Dataframe with per-gene statistics: <br>
+`gene`: Gene information. <br>
+`obs.IRratio`: observed transcript-level median score. <br>
+`exp.IRratio`: mean expected score from permutations. <br>
+`pval_low`: empirical p-value for observed ≤ random. <br>
+`pval_high`: empirical p-value for observed ≥ random. <br>
+`sd`: standard deviation of observed median score from permutation distribution. <br>
+`z_score`: standardized Z of observed vs expected. <br>
+`num_intron`: number of introns before considering nested introns. <br>
+`num_intron_without_nested`: number of introns without nested introns. <br>
+
+
+## additional functions
 
