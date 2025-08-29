@@ -65,7 +65,7 @@ print(res)
 `nperms`: Number of permutations (default = 100000). <br>
 `seed`: Random seed (optional, for reproducibility).<br>
 - Returns: Dataframe with per-gene statistics: <br>
-`gene`: Gene information. <br>
+`gene`: gene information. <br>
 `obs.IRratio`: observed transcript-level median score. <br>
 `exp.IRratio`: mean expected score from permutations. <br>
 `pval_low`: empirical p-value for observed ≤ random. <br>
@@ -77,4 +77,30 @@ print(res)
 
 
 ## additional functions
+These functions support reading `IRratio` values from `IRFinder` outputs and is designed to calculate the log2 fold change of experimental IRratio over control, providing a normalized measure of intron retention differences between conditions.
+
+-- `read_irdir(control_dir, experiment_dir, control_name, experiment_name, splice_min = 10)` 
+- Description: Reads results from all replicates for control and experiment groups produced by IRfinder(e.g. IRFinder-IR-dir-1.txt, IRFinder-IR-dir-2.txt, IRFinder-IR-dir-3.txt ), merges by intron index, and filters low-count introns. <br>
+- Parameters: <br>
+`control_dir`: Path to control IRFinder files. <br>
+`experiment_dir`: Path to experiment IRFinder files. <br>
+`control_name`: Label for the control group. <br>
+`experiment_name`: Label for the experiment group. <br>
+`splice_min`: Minimum SpliceExact threshold (default = 10). <br>
+- Returns: Dataframe with `gene`, `index`, `Chr`, `Start`, `End`, and replicate IRratio values for both groups.<br>
+
+-- `compute_group_means(df, control_name, experiment_name, metric = "IRratio")`
+- Description: Calculates replicate mean values for control and experiment. <br>
+- Parameters: <br>
+`df`: Dataframe from read_irdir. <br>
+`control_name`: Name of control group (used in column prefix). <br>
+`experiment_name`: Name of experiment group (used in column prefix). <br>
+`metric`: Column to average (default = "IRratio"). <br>
+- Returns: Dataframe with new `{group}_{metric}_avg` columns. <br>
+
+
+
+
+
+
 
