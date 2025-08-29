@@ -108,7 +108,7 @@ These functions support reading `IRratio` values from `IRFinder` outputs and is 
 `new_name`: Name of columns to store fold change and z score. <br>
 `metric`: Column to average (default = "IRratio"). The function expects columns named `{sample_name}_{metric}_avg`. <br>
 `pseudocount`: Small numeric added to numerator and denominator to avoid log of zero (default = 1e-6).
-- Returns: Dataframe with two new columns, `{new_name}_{metric}_lfc`, `{new_name}_{metric}_z` <br>
+- Returns: Dataframe with new columns `{new_name}_{metric}_lfc`, `{new_name}_{metric}_z` <br>
 
 
 
